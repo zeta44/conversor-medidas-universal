@@ -1,7 +1,7 @@
 <h3>English</h3>
 # UNIT CONVERSION PROJECT
-=> API in NodeJs
-=> User interface in Angular.
+* API in NodeJs
+* User interface in Angular.
 
 # INSTRUCTIONS 
 * Download the project. 
@@ -9,8 +9,8 @@
 
 <h3>Portugês</h3>
 # PROJETO CONVERSÃO DE UNIDADES
-=> API em NodeJs
-=> Usuário interface em Angular.
+* API em NodeJs
+* Usuário interface em Angular.
 
 # INSTRUÇÕES
 * Baixe o projeto.
