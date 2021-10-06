@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "84be6906-741f-4099-899f-68f7ff00094c",
+		"name": "conversor-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}/",
+					"host": [
+						"{{api-host}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api-home",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}/",
+					"host": [
+						"{{api-host}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api-options",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}/options?from=cm3",
+					"host": [
+						"{{api-host}}"
+					],
+					"path": [
+						"options"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "cm3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api-options",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}/options?from=cm3",
+					"host": [
+						"{{api-host}}"
+					],
+					"path": [
+						"options"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "cm3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api-converter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unid_origem\": \"dm3\",\r\n    \"unid_destino\": \"l\",\r\n    \"valor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api-host}}/converter",
+					"host": [
+						"{{api-host}}"
+					],
+					"path": [
+						"converter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api-converter",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "{{api-host}}/converter",
+					"host": [
+						"{{api-host}}"
+					],
+					"path": [
+						"converter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

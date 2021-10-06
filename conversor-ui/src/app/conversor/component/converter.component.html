@@ -1,0 +1,26 @@
+<br />
+<!-- ng if erro -->
+<div *ngIf="model.erro" class="alert alert-danger"	role="alert">
+	{{model.erro}}
+</div>
+<div class="panel panel-success">
+	<div class="panel-heading">
+		Selecione a moeda a ser convertida
+	</div>
+	<div class="panel-body text-center">
+	  <form #conversaoForm="ngForm" class="form-inline">
+		<input type="text" name="valor" class="form-control text-right" [(ngModel)]="model.valor" required numero >
+		<select  name="unid_origem" class="form-control" [(ngModel)]="model.unid_origem" required >
+			<option *ngFor="let v of optFrom" [value]="v">{{v}}</option>
+		</select>
+		<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+		<select	name="unid_destino" class="form-control" [(ngModel)]="model.unid_destino" required >
+			<option *ngFor="let v of optTo" [value]="v">{{v}}</option>
+		</select>
+		<input type="submit" value="Converter" (click)="postConvert()" class="btn btn-success" >
+		<input readonly type="text" name="resultado" class="form-control text-right" [(ngModel)]="resultado"	placeholder="0"required >
+	  </form>
+	 </div>
+	 
+</div>
+
