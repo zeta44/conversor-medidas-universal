@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ConverterComponent } from './component';
 import { FormsModule } from '@angular/forms';
+import { ConverterComponent } from './component';
 import { NumeroDirective } from './directives';
+import { ConversorService } from './service';
 
 
 
@@ -17,6 +18,9 @@ import { NumeroDirective } from './directives';
   ],
   exports:[
     ConverterComponent
+  ],
+  providers:[
+    ConversorService
   ]
 })
 export class ConversorModule { }

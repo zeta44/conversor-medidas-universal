@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ConversorModel } from '../model';
 import { NgForm } from '@angular/forms';
+import { ConversorService } from '../service';
 
 @Component({
   selector: 'app-converter',
@@ -17,37 +18,34 @@ export class ConverterComponent implements OnInit {
   public optTo: Array<string> = [];
   public model: ConversorModel = new ConversorModel("", "", "", "");
 
-  constructor(private httpclient: HttpClient) { }
+  constructor(private conversorService: ConversorService) { }
 
+  public onChange($event:any){
+    let callbak = (data: any) => {
+      this.optTo = data;
+      console.log(data);
+    }
+    this.conversorService.getOptions(callbak, this.model.unid_origem)
+  }
 
   getOptionsFrom(): void {
-    this.httpclient.get("http://localhost:3000/options")
-      .subscribe((data: any) => {
-        this.optFrom = data;
-        console.log(data);
-      })
-  }
-
-  getOptionsTo(): void {
-    this.httpclient.get("http://localhost:3000/options")
-      .subscribe((data: any) => {
-        this.optTo = data;
-        console.log(data);
-      })
-  }
+    let callbak = (data: any) => {
+      this.optFrom = data;
+      console.log(data);
+    }
+    this.conversorService.getOptions(callbak, "")
+  } 
 
   public postConvert(): void {
-
-    this.httpclient.post("http://localhost:3000/converter", this.model)
-      .subscribe((data: any) => {
-        this.model.erro = data.erro;
-        this.resultado = data.valor;
-        console.log(data);
-      })
+    let callback = (data: any) => {
+      this.model.erro = data.erro;
+      this.resultado = data.valor;
+      console.log(data);
+    }
+    this.conversorService.postConvert(this.model, callback)
   }
 
   ngOnInit(): void {
     this.getOptionsFrom();
-    this.getOptionsTo();
   }
 }

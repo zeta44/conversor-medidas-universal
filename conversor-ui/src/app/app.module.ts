@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ConversorModule } from './conversor';
+import { ConversorModule, ConversorService } from './conversor';
 
 
 @NgModule({
@@ -17,7 +17,9 @@ import { ConversorModule } from './conversor';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    ConversorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

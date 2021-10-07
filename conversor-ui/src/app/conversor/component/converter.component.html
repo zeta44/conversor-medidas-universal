@@ -10,7 +10,7 @@
 	<div class="panel-body text-center">
 	  <form #conversaoForm="ngForm" class="form-inline">
 		<input type="text" name="valor" class="form-control text-right" [(ngModel)]="model.valor" required numero >
-		<select  name="unid_origem" class="form-control" [(ngModel)]="model.unid_origem" required >
+		<select (change)="onChange($event)"  name="unid_origem" class="form-control" [(ngModel)]="model.unid_origem" required >
 			<option *ngFor="let v of optFrom" [value]="v">{{v}}</option>
 		</select>
 		<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
