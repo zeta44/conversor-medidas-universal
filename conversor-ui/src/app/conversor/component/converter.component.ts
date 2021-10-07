@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ConversorModel } from '../model';
 import { NgForm } from '@angular/forms';
 import { ConversorService } from '../service';
